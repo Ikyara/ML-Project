@@ -491,7 +491,8 @@ with tab1:
                     threshold=dict(line=dict(color='#ec4899', width=3), thickness=0.8, value=predicted_grade),
                 ),
             ))
-            fig_gauge.update_layout(**plotly_layout, height=250, margin=dict(l=30, r=30, t=30, b=10))
+            gauge_layout = {k: v for k, v in plotly_layout.items() if k != 'margin'}
+            fig_gauge.update_layout(**gauge_layout, height=250, margin=dict(l=30, r=30, t=30, b=10))
             st.plotly_chart(fig_gauge, use_container_width=True)
 
         with chart_col:
