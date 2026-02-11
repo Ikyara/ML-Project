@@ -739,7 +739,7 @@ with tab2:
         <tr><th>Feature</th><th>Description</th><th>Range</th><th>Type</th></tr>
         <tr><td><strong>G1</strong></td><td>First period grade — the earliest academic indicator</td><td>0 – 20</td><td>Numeric</td></tr>
         <tr><td><strong>G2</strong></td><td>Second period grade — strongest predictor of final performance</td><td>0 – 20</td><td>Numeric</td></tr>
-        <tr><td><strong>Absences</strong></td><td>Total number of school absences throughout the year</td><td>0 – 93</td><td>Numeric</td></tr>
+        <tr><td><strong>Absences</strong></td><td>Total number of school absences throughout the year</td><td>0 – 30</td><td>Numeric</td></tr>
         <tr><td><strong>Study Time</strong></td><td>Weekly study time: 1 (<2h), 2 (2-5h), 3 (5-10h), 4 (>10h)</td><td>1 – 4</td><td>Ordinal</td></tr>
         <tr><td><strong>Failures</strong></td><td>Number of past class failures</td><td>0 – 4</td><td>Numeric</td></tr>
         <tr><td><strong>Higher Education</strong></td><td>Whether the student aspires to pursue higher education</td><td>Yes / No</td><td>Binary</td></tr>
@@ -893,6 +893,32 @@ with tab4:
             using machine learning. By analyzing patterns in academic performance, study habits, and background factors, 
             the model provides educators and students with early insights into expected outcomes — enabling timely 
             intervention for at-risk students.
+        </div>
+    </div>""", unsafe_allow_html=True)
+
+    # Team credits
+    st.markdown("<div class='section-head'>👩‍💻 Project Team</div>", unsafe_allow_html=True)
+    t1, t2, t3 = st.columns(3)
+    team = [
+        ("Iqra Ansari", "03", "🎓"),
+        ("Shiwani Pandey", "31", "🎓"),
+        ("Sonal Sharma", "37", "🎓"),
+    ]
+    for col, (name, roll, icon) in zip([t1, t2, t3], team):
+        with col:
+            st.markdown(f"""<div class='stat-box'>
+                <div style='font-size: 2rem; margin-bottom: 5px;'>{icon}</div>
+                <div class='stat-value' style='font-size: 1.3rem;'>{name}</div>
+                <div class='stat-label'>Roll No. {roll}</div>
+                <div class='stat-label' style='margin-top: 4px;'>SY BSc Data Science</div>
+            </div>""", unsafe_allow_html=True)
+    
+    st.markdown("""<div class='info-card' style='margin-top: 15px;'>
+        <div class='info-card-title'>📚 Course Details</div>
+        <div class='info-card-text'>
+            <strong>Subject:</strong> Machine Learning<br>
+            <strong>Program:</strong> SY BSc Data Science<br>
+            <strong>Project:</strong> Student Final Grade Prediction using Random Forest Regression
         </div>
     </div>""", unsafe_allow_html=True)
 
