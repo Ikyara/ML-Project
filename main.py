@@ -375,7 +375,7 @@ with st.sidebar:
 
     st.markdown("<div class='sidebar-section'>📚 Habits & Attendance</div>", unsafe_allow_html=True)
     studytime = st.slider('Weekly Study Time', 1, 4, 2, help="1: <2hrs · 2: 2-5hrs · 3: 5-10hrs · 4: >10hrs")
-    absences = st.number_input('Number of Absences', 0, 93, 5)
+    absences = st.number_input('Number of Absences', 0, 30, 5)
 
     st.markdown("<div class='sidebar-section'>📋 Background</div>", unsafe_allow_html=True)
     failures = st.slider('Past Class Failures', 0, 4, 0)
