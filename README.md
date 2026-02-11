@@ -71,8 +71,8 @@ streamlit run main.py
 
 | Model | MAE | RMSE | R² | Adjusted R² |
 |-------|-----|------|----|-------------|
-| Linear Regression | — | — | — | — |
-| **Random Forest** | — | — | — | — |
+| Linear Regression | 0.9425 | 1.4956 | 0.8467 | 0.8421 |
+| **Random Forest** | 0.9590 | 1.5292 | 0.8397 | 0.8349 |
 
 > Fill in after running the notebook on your data.
 
