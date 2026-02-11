@@ -68,6 +68,13 @@ st.markdown("""
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #140f2d 0%, #0e0b1e 100%);
         border-right: 1px solid rgba(168, 85, 247, 0.15);
+        width: 260px !important;
+    }
+    section[data-testid="stSidebar"] .block-container {
+        padding-top: 1rem !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        gap: 0.4rem !important;
     }
 
     /* Tabs */
@@ -402,27 +409,26 @@ df_raw = load_raw_data()
 # ── Sidebar Inputs ───────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("""
-    <div style='text-align:center; padding: 10px 0 5px 0;'>
-        <span style='font-size: 2.2rem;'>🎓</span>
-        <h2 style='background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; margin: 5px 0;'>Grade Predictor</h2>
-        <p style='color: #7a6fa5; font-size: 0.82rem;'>Adjust student parameters below</p>
+    <div style='text-align:center; padding: 0; margin-top: -20px;'>
+        <span style='font-size: 1.6rem;'>🎓</span>
+        <span style='background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 1.2rem;'> Grade Predictor</span>
     </div>
+    <hr style='margin: 8px 0; border-color: rgba(168,85,247,0.15);'>
     """, unsafe_allow_html=True)
-    st.markdown("---")
 
-    st.markdown("<div class='sidebar-section'>📊 Academic Grades</div>", unsafe_allow_html=True)
-    G1 = st.slider('First Period Grade (G1)', 0, 20, 10)
-    G2 = st.slider('Second Period Grade (G2)', 0, 20, 10)
+    st.markdown("<div class='sidebar-section' style='margin: 5px 0 4px 0;'>📊 Academic Grades</div>", unsafe_allow_html=True)
+    G1 = st.slider('G1 (Period 1)', 0, 20, 10)
+    G2 = st.slider('G2 (Period 2)', 0, 20, 10)
 
-    st.markdown("<div class='sidebar-section'>📚 Habits & Attendance</div>", unsafe_allow_html=True)
-    studytime = st.slider('Weekly Study Time', 1, 4, 2, help="1: <2hrs · 2: 2-5hrs · 3: 5-10hrs · 4: >10hrs")
-    absences = st.number_input('Number of Absences', 0, 30, 5)
+    st.markdown("<div class='sidebar-section' style='margin: 10px 0 4px 0;'>📚 Habits & Attendance</div>", unsafe_allow_html=True)
+    studytime = st.slider('Study Time (hrs/week)', 1, 4, 2, help="1: <2hrs · 2: 2-5hrs · 3: 5-10hrs · 4: >10hrs")
+    absences = st.number_input('Absences', 0, 30, 5)
 
-    st.markdown("<div class='sidebar-section'>📋 Background</div>", unsafe_allow_html=True)
-    failures = st.slider('Past Class Failures', 0, 4, 0)
-    higher_val = st.radio('Wants Higher Education?', ['Yes', 'No'], index=0)
+    st.markdown("<div class='sidebar-section' style='margin: 10px 0 4px 0;'>📋 Background</div>", unsafe_allow_html=True)
+    failures = st.slider('Past Failures', 0, 4, 0)
+    higher_val = st.radio('Higher Education?', ['Yes', 'No'], index=0, horizontal=True)
 
-    st.markdown("---")
+    st.markdown("<hr style='margin: 10px 0; border-color: rgba(168,85,247,0.15);'>", unsafe_allow_html=True)
     predict_btn = st.button('🔮 Predict Final Grade', use_container_width=True)
 
 # ── Helper ───────────────────────────────────────────────────────────────────
