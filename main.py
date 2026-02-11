@@ -19,6 +19,10 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+    html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"],
+    [data-testid="stApp"], [data-testid="stBottom"], .main, .block-container {
+        background-color: #0e0b1e !important;
+    }
     .stApp {
         background: #0e0b1e;
         font-family: 'Inter', sans-serif;
