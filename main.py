@@ -20,8 +20,45 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
     html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"],
-    [data-testid="stApp"], [data-testid="stBottom"], .main, .block-container {
+    [data-testid="stApp"], [data-testid="stBottom"], .main, .block-container,
+    [data-testid="stMainBlockContainer"], [data-testid="stVerticalBlock"],
+    [data-testid="stAppViewBlockContainer"], .appview-container,
+    [data-testid="stToolbar"], [data-testid="stDecoration"],
+    [data-testid="stStatusWidget"], div[data-testid="collapsedControl"],
+    .stDeployButton, [data-testid="baseButton-header"],
+    [data-testid="stToolbarActions"], header[data-testid="stHeader"],
+    div[data-testid="stSidebarCollapsedControl"] {
         background-color: #0e0b1e !important;
+        color-scheme: dark !important;
+    }
+    /* Force overscroll color */
+    html {
+        overscroll-behavior: none;
+        scrollbar-color: #2d2654 #0e0b1e;
+        background: #0e0b1e !important;
+    }
+    body {
+        background: #0e0b1e !important;
+        overflow-y: auto;
+    }
+    body::before, body::after {
+        background-color: #0e0b1e !important;
+    }
+    /* Kill the top colored decoration bar */
+    [data-testid="stDecoration"] {
+        display: none !important;
+        background: none !important;
+        height: 0 !important;
+    }
+    /* Header bar background */
+    header[data-testid="stHeader"] {
+        background: #0e0b1e !important;
+        backdrop-filter: none !important;
+    }
+    /* Top header bar */
+    [data-testid="stHeader"] {
+        background: #0e0b1e !important;
+        backdrop-filter: none !important;
     }
     .stApp {
         background: #0e0b1e;
